@@ -5,8 +5,11 @@
 * Usman Ayub Sheikh
 
 ## Goals
-* For those having some experience of programming in some other language, the goal would be to show how to do the same things as you do in MATLAB now in Python? 
-* For those having no experience of programming whatsoever, however, the best we can achieve in this tutorial is to equip you with some programming terminology/vocabulary, give you a few example scripts and use cases, and point you to a few useful resources that you can learn more from, through your own practice and research.
+* For those with experience of programming in some other language, the goal would be to show how to do the same things as you do in MATLAB now in Python? 
+* For those with no experience of programming however, what we can achieve in this tutorial is: 
+	- to equip you with some programming terminology/vocabulary, 
+	- give you a few example scripts and use cases, and 
+	- point you to a few useful resources that you can later on learn from.
 
 ## Topics
 * Python as a Language,
