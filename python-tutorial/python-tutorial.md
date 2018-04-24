@@ -12,13 +12,13 @@
 	- learn about a few useful resources that we can later on go back to and learn more from.
 
 ## Topics
-* [Python as a Language](python-as-a-language),
-* [Data Types](data-types),
-* [Arithmetic, and Logical Operators](arithmetic-and-logical-operators),
-* [Strings](strings),
-* [Conditionals](conditionals),
-* [Loops](loops), and
-* [Functions](functions).
+* [Python as a Language](#python-as-a-language),
+* [Data Types](#data-types),
+* [Arithmetic, and Logical Operators](#arithmetic-and-logical-operators),
+* [Strings](#strings),
+* [Conditionals](#conditionals),
+* [Loops](#loops), and
+* [Functions](#functions).
 
 ### Python as a Language
 * Python is a *high-level* language and therefore allows us to think and program more in terms of the task/operation we want to achieve rather than how and where the the bits and bytes of our data would actually get operated on, and stored. 
