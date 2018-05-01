@@ -12,7 +12,7 @@
 ---
 ### The data
 
-![thedata](https://github.com/atelabaz/bhg2018/blob/master/Python/data_preview.jpg)
+![thedata](Python/data_preview.jpg)
 
 ---
 ### Reading files
