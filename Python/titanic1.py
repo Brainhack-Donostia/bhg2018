@@ -6,7 +6,6 @@
 FILE = "titanic.tsv"
 # import data as a list of strings,
 # one per row in the file
-# https://docs.python.org/2/tutorial/inputoutput.html
 with open(FILE, 'r') as src:
     header = src.readline() #read first line
     data = src.readlines() # read rest
@@ -40,33 +39,26 @@ dataDict = {colName:[] for colName in header}
 
 
 # split rows
-#def splitRow(row):
-#    row = row.strip("\r\n")
-#    row = row.split('\t') # the second element of the list is a string
-#    # missing data to None
-#    for i, elem in enumerate(row):
-#        if elem == "":
-#            row[i] = None
-#        elif elem.isdigit():
-#            if 
-#            row[i] = float(elem)
-#    return row
-
-# now let's populate the dictionary
-# FOR LOOPS
-# IF - ELSE statements
-for row in data:
-    #row = splitRow(row)
+def splitRow(row):
     row = row.strip("\r\n")
     row = row.split('\t') 
     # missing data to None, string digits to floats
-    for i in range(len(row)): # LISTS ARE MUTABLE. CAREFUL!!
+     for i in range(len(row)): # LISTS ARE MUTABLE. CAREFUL!!
         if row[i] == "":
             row[i] = None
         elif row[i].isdigit(): # another string method!
             row[i] = float(elem) # turn all numbers into floats
             # coercion from float to int is automatic; not so otherwise
 
+    return row
+
+# now let's populate the dictionary
+# FOR LOOPS
+# IF - ELSE statements
+for row in data:
+    row = splitRow(row)
+
+    # since rows and header have the same length...
     for i in range(len(header)):
         dataDict[header[i]].append(row[i]) # APPEND. List method
 

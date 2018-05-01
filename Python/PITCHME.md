@@ -4,7 +4,7 @@
 ---
 ## In this first part, we will
 * Review basic Python (2.7)
- * Reading and writing files; Basic types: integers, floats, booleans; Strings; Lists and dictionaries; **For** loops; **If-else** statementes; Functions
+ * Reading and writing files; Basic types: integers, floats, booleans; Strings; Lists and dictionaries; **For** loops; **If-else** statements; Functions
 
 * Learn the pythonic way to do certain things
 * Ask simple questions from a data set using this basic knowledge
@@ -12,7 +12,7 @@
 ---
 ### The data
 
-captura de pantalla
+![thedata](data_preview.jpg)
 
 ---
 ### Reading files
@@ -271,37 +271,47 @@ for row in data:
 * What percentage of passengers travelling on 3rd class survived? And in other classes?
 
 ---
-### One column: classes
+### One column: number of passengers per class
 
 ```
 classes = set(dataDict['Pclass'])
 passengersByClass = {int(cl):0 for cl in classes}
 
 for cl in classes:
-    passengersByClass[cl] = dataDict['Pclass'].count(c)
+    passengersByClass[cl] = dataDict['Pclass'].count(cl)
+```
 
-total = float(sum(passengerByClass.values())) # why not use len()?
+Now, percentages...
+
+```
+total = sum(passengerByClass.values())
+# why not use len()?
+
+for cl in passengersByClass.keys():
+    passengersByClass[cl] = passengersByClass[cl]/total
 
 
 ```
 
 - Sets are **UNORDERED** collections of **unique** objects
 
-- count() is a list method that counts instances of an object inside a list.
+- [count()](https://docs.python.org/2/tutorial/datastructures.html) is a list method that counts instances of an object inside a list.
 
 ---
-### Two columns: % of survivors by class
-We'll need to use the previous
+### One column: number of passengers per class
+Let's make it into a function
 
 ```
 def totalByLevel(category):
     levels = set(dataDict[category])
-    totalDict = {level:[] for level in levels}
+    byCategory = {level:[] for level in levels}
     for level in levels:
-        totalDict[level] = dataDict[category].count(level)
-    return totalDict
+        byCategory[level] = dataDict[category].count(level)
+    return byCategory
 
 ```
+
+**SCOPE**
 
 ---
 
