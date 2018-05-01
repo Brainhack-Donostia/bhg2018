@@ -190,7 +190,7 @@ For each line in the *data* list, we want to
 
 ```{Python}
 row = row.strip("\r\n")
-row = row.split('\t') # now row is a list!
+row = row.split("\t") # now row is a list!
 # missing data to None, string digits to floats
 for i in range(len(row)):
     elem = row[i]
@@ -211,9 +211,9 @@ elif expression2:
 else:
     # do something else
 ```
-Only the first if statement is compulsory in an if - else expressions.
+Only the first if statement is compulsory in an if - else expression.
 
-Expressions are statements that return True or False, such as:
+What form can an expression take? It has be evaluated into a boolean value: True or False.
 
 ```{Python}
 x == 3
@@ -248,28 +248,11 @@ for row in data:
 
     # since rows and header have the same length...
     for i in range(len(header)):
-        dataDict[header[i]].append(row[i]) # APPEND. List method
+        dataDict[header[i]].append(row[i])
         
 ```
 
 * [append()](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists) is a list method that adds an element to the end of a list
 
 ---
-### Loops
-```{Python}
-for idx in [0,7]:
-    print(idx)
-
-for idx in range(7):
-    print(idx)
-    
-abc = ["a", "b", "c"]
-for letter in abc:
-    print(letter)
-
-for i, letter in abc:
-    print(i, letter)
-    
-```
-
-### If - else
+# Now let's ask some questions
