@@ -4,20 +4,15 @@
 ---
 ## In this first part, we will
 * Review basic Python (2.7)
- * Reading and writing files
- * Basic types: integers, floats, booleans
- * Strings
- * Lists and dictionaries
- * **For** loops
- * **If-else** statementes
- * Functions
+ * Reading and writing files; Basic types: integers, floats, booleans; Strings; Lists and dictionaries; **For** loops; **If-else** statementes; Functions
+
 * Learn the pythonic way to do certain things
 * Ask simple questions from a data set using this basic knowledge
 ---
 ## The data
 
 captura de pantalla
-
+---
 ## Reading files
 
 [Docs](https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files)
@@ -51,7 +46,7 @@ with open(FILE, 'r') as src:
     header = src.readline() # read first line
     data = src.readlines() # read rest
 ```
-
+---
 ## Lists
 The **variable** *data* is storing a **list** of strings. Each strings is a line of the original file.
 
