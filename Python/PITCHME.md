@@ -116,8 +116,9 @@ myDict['spanish'] = 'es'
 myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 ```
 ---
-### Create an empty dictionary
-1. Let's get the column names from the string header
+### Create an empty dictionary (1)
+Let's get the column names from the string header
+ 
  * [strip()](https://docs.python.org/2/library/string.html#string.strip)
  * [split()](https://docs.python.org/2/library/string.html#string.split)
 
@@ -126,11 +127,11 @@ myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 header = header.strip().split("\t") 
 ```
 ---
-### Create an empty dictionary
-2. Create the dictionary
+### Create an empty dictionary (2)
+Create the dictionary
 
 ```
-# the classic way
+# the classic way, using loops
 dataDict = {}
 for colName in header:
     dataDict[colName] = []
@@ -138,4 +139,30 @@ for colName in header:
 # the pythonic way
 # dictionary comprehensions exist too!
 dataDict = {colName:[] for colName in header} 
+```
+---
+### Fill the dictionary (1)
+For each line in the *data* list
+
+* split it
+* do something to empty cells
+* change numbers to appropriate data types
+* store each value in the appropriate dataDict key
+
+Do we need a function?
+---
+### Fill the dictionary (2)
+
+```{Python}
+def splitRow(row):
+    row = row.strip("\r\n")
+    row = row.split('\t') # the second element of the list is a string
+    # missing data to None
+    for i in range(len(row)):
+        elem = row[i]
+        if elem == "":
+            row[i] = None
+        elif elem.isdigit(): 
+            row[i] = float(elem)
+    return row
 ```
