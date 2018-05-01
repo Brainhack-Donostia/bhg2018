@@ -35,7 +35,7 @@ tgt.close() # don't forget this!
 
 ```
 ---
-## Let's read our file!
+### Let's read our file!
 
 Check the **alternative and safer** syntax!
 
@@ -79,3 +79,40 @@ myList[0] = 'w' # change the first element
 myList3 = [1, "Lola", 3.45, True]
 ```
 
+---
+Up to now, we have:
+
+* *header*: a **string** contanining the names of the columns
+* *data*: a list of **strings**
+
+But we would like to have a **dictionary** *dataDict*, where the *keys* are the columm names, and the values are *lists* of values.
+---
+## Dictionaries
+Collections of *key:value* pairs
+
+```{Python}
+myDict = ['english':'en', 'spanish:'sp', 'french':'fr']
+```
+
+---
+Dictionaries:
+
+* are UNORDERED
+
+```{Python}
+myDict[1]  # WRONG!
+myDict['spanish']
+```
+
+* are MUTABLE
+
+```{Python}
+myDict['spanish'] = 'es'
+```
+
+* can contain different types of objects
+
+```{Python}
+myDict = [3:'three', 'ninety eight':98, 5.6:'five point six']
+```
+ 
