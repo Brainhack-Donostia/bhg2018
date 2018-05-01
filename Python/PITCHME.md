@@ -48,23 +48,24 @@ with open(FILE, 'r') as src:
 ```
 ---
 ## Lists
-The **variable** *data* is storing a **list** of strings. Each strings is a line of the original file.
+The **variable** *data* is storing a **list** of strings. Each string is a line of the original file.
 
 Examples of lists
 
 ```{Python}
 myList = ['a', 'b', 'c']
-myList2 = [1, "Lola", 3.45, True]
+myList2 = [3,5,7,9,12,34,5]
+
 
 ```
-
+---
 Lists:
 
 *  are ORDERED
 
 ```{Python}
 myList[0] # access the first element
-myList2[1:4] # access ["Lola", 3.45, True]
+myList2[1:4] # accesses [5,7,9]
 ```
 *  are MUTABLE
 
@@ -74,4 +75,7 @@ myList[0] = 'w' # change the first element
 
 *  can contain different types of objects
 
+```{Python}
+myList3 = [1, "Lola", 3.45, True]
+```
 
