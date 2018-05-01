@@ -8,12 +8,14 @@
 
 * Learn the pythonic way to do certain things
 * Ask simple questions from a data set using this basic knowledge
+
 ---
-## The data
+### The data
 
 captura de pantalla
+
 ---
-## Reading files
+### Reading files
 
 [Docs](https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files)
 
@@ -34,6 +36,7 @@ tgt.write("This will be written in results.txt\n")
 tgt.close() # don't forget this!
 
 ```
+
 ---
 ### Let's read our file!
 
@@ -47,7 +50,7 @@ with open(FILE, 'r') as src:
     data = src.readlines() # read rest
 ```
 ---
-## Lists
+### Lists
 The **variable** *data* is storing a **list** of strings. Each string is a line of the original file.
 
 Examples of lists
@@ -58,8 +61,9 @@ myList2 = [3,5,7,9,12,34,5]
 
 
 ```
+
 ---
-### Lists:
+### Lists...
 
 *  are ORDERED
 
@@ -87,11 +91,14 @@ myList3 = [1, "Lola", 3.45, True]
 
 But we would like to have a **dictionary** *dataDict*, where the *keys* are the columm names, and the values are *lists* of values.
 ---
-## Dictionaries
-Collections of *key:value* pairs
+### Why a dictionary?
+Dictionaries are collections of *key:value* pairs
 
 ```{Python}
 myDict = {'english':'en', 'spanish:'sp', 'french':'fr'}
+
+dataDict = {'name':[passenger1, passenger2,...],
+            'survived':[1,0,0,1,..], 'age':[24,35,7,58,...]}
 ```
 
 ---
@@ -115,6 +122,7 @@ myDict['spanish'] = 'es'
 ```{Python}
 myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 ```
+
 ---
 ### Create an empty dictionary (1)
 Let's get the column names from the string header
@@ -126,6 +134,9 @@ Let's get the column names from the string header
 # turn string into list of column names
 header = header.strip().split("\t") 
 ```
+
+Now, how do we turn this into a dictionary?
+
 ---
 
 ### Loops
@@ -141,37 +152,78 @@ for letter in abc:
     print(letter)
 
 for i, letter in enumerate(abc):
-    print(i, letter)
+    print(str(i) + " " + letter)
     
 ```
+
 ---
 ### Create an empty dictionary (2)
-Create the dictionary
+Create the dictionary the classic way
 
-```
-# the classic way, using loops
+```{Python}
+# using regular loops
 dataDict = {}
 for colName in header:
     dataDict[colName] = []
+```
 
-# the pythonic way
+Or using the pythonic way, in one line!
+
+```{Python}
 # dictionary comprehensions exist too!
 dataDict = {colName:[] for colName in header} 
 ```
 
-[More on list (and dict!) comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+[More on list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+
 ---
 ### Fill the dictionary (1)
 For each line in the *data* list, we want to
 
-* split it
+* split it on \t
 * do something to empty cells
 * change numbers to appropriate data types
-* store each value in the appropriate dataDict key
+* store each value in the appropriate dataDict key list.
 
-Do we need a function?
 ---
 ### Fill the dictionary (2)
+
+```{Python}
+row = row.strip("\r\n")
+row = row.split('\t') # now row is a list!
+# missing data to None, string digits to floats
+for i in range(len(row)):
+    elem = row[i]
+    if elem == "":
+        row[i] = None
+    elif elem.isdigit(): 
+        row[i] = float(elem)
+```
+
+---
+### If - else
+
+```{Python}
+if expression:
+    # do something
+elif expression2:
+    # do something else
+else:
+    # do something else
+```
+Only the first if statement is compulsory in an if - else expressions.
+
+Expressions are statements that return True or False, such as:
+
+```{Python}
+x == 3
+x != 3
+x < 3
+x > 3
+
+```
+---
+### Fill the dictionary (3)
 
 ```{Python}
 def splitRow(row):
