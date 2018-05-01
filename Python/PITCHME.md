@@ -262,10 +262,77 @@ for row in data:
 ---
 
 ### Questions about a column
-* What was the male to female ration?
+* What was the male to female ratio?
 * How many passengers travelled in each class?
 
 ---
 ### Questions involving two columns
 * What percentage of women survived? And of men?
 * What percentage of passengers travelling on 3rd class survived? And in other classes?
+
+---
+### One column: classes
+
+```
+classes = set(dataDict['Pclass'])
+passengersByClass = {int(cl):0 for cl in classes}
+
+for cl in classes:
+    passengersByClass[cl] = dataDict['Pclass'].count(c)
+
+total = float(sum(passengerByClass.values())) # why not use len()?
+
+
+```
+
+- Sets are **UNORDERED** collections of **unique** objects
+
+- count() is a list method that counts instances of an object inside a list.
+
+---
+### Two columns: % of survivors by class
+We'll need to use the previous
+
+```
+def totalByLevel(category):
+    levels = set(dataDict[category])
+    totalDict = {level:[] for level in levels}
+    for level in levels:
+        totalDict[level] = dataDict[category].count(level)
+    return totalDict
+
+```
+
+---
+
+### Two columns: % of survivors by class
+
+```
+def pctSurvival(category):
+    # total number of passengers per group in that category
+    total = totalByLevel(category)
+    
+    levels = total.keys()
+    survivors = {level:0 for level in levels} # init counter
+    
+    for i, p in enumerate(dataDict["Survived"]):
+        if p == 1:
+            survivors[dataDict[category][i]] += 1
+        
+    print(category)
+    print("==========")
+    for level in levels:
+        print(level)
+        print("{}% survived".format(float(survivors[level]) / 
+        total[level] * 100))
+```
+
+---
+### String formatting
+
+---
+### Scope
+```
+Only functions version
+```
+
