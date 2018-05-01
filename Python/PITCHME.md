@@ -1,9 +1,7 @@
+---
 # Introductory Python Course
 ## Part 1
-
-
 ---
-
 ## In this first part, we will
 * Review basic Python (2.7)
  * Reading and writing files
@@ -15,7 +13,6 @@
  * Functions
 * Learn the pythonic way to do certain things
 * Ask simple questions from a data set using this basic knowledge
-
 ---
 ## The data
 
@@ -42,7 +39,6 @@ tgt.write("This will be written in results.txt\n")
 tgt.close() # don't forget this!
 
 ```
-
 ---
 ## Let's read our file!
 
