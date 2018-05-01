@@ -125,7 +125,7 @@ myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 # turn string into list of column names
 header = header.strip().split("\t") 
 ```
-
+---
 ### Create an empty dictionary
 2. Create the dictionary
 
