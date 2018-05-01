@@ -1,4 +1,4 @@
 # list of file extensions to ignore
 *.pyc
 *.swp
-
+.DS_Store
