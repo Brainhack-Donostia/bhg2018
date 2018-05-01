@@ -80,7 +80,7 @@ myList3 = [1, "Lola", 3.45, True]
 ```
 
 ---
-Up to now, we have:
+### Up to now, we have:
 
 * *header*: a **string** contanining the names of the columns
 * *data*: a list of **strings**
@@ -91,7 +91,7 @@ But we would like to have a **dictionary** *dataDict*, where the *keys* are the 
 Collections of *key:value* pairs
 
 ```{Python}
-myDict = ['english':'en', 'spanish:'sp', 'french':'fr']
+myDict = {'english':'en', 'spanish:'sp', 'french':'fr'}
 ```
 
 ---
@@ -100,8 +100,8 @@ Dictionaries:
 * are UNORDERED
 
 ```{Python}
-myDict[1]  # WRONG!
-myDict['spanish']
+myDict[1]  # WRONG! 
+myDict['spanish'] # gives you 'sp'
 ```
 
 * are MUTABLE
@@ -113,6 +113,6 @@ myDict['spanish'] = 'es'
 * can contain different types of objects
 
 ```{Python}
-myDict = [3:'three', 'ninety eight':98, 5.6:'five point six']
+myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 ```
  
