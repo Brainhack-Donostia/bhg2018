@@ -119,12 +119,30 @@ myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 ### Create an empty dictionary (1)
 Let's get the column names from the string header
  
- * [strip()](https://docs.python.org/2/library/string.html#string.strip)
- * [split()](https://docs.python.org/2/library/string.html#string.split)
+ * [strip()](https://docs.python.org/2/library/string.html#string.strip) is a string method that removes empty space from the ends of a string
+ * [split()](https://docs.python.org/2/library/string.html#string.split) is a string method that turns a string into a list of elements
 
 ```{Python}
 # turn string into list of column names
 header = header.strip().split("\t") 
+```
+---
+
+### Loops
+```{Python}
+for i in [0,7]:
+    print(idx)
+
+for i in range(7):
+    print(idx)
+    
+abc = ["a", "b", "c"]
+for letter in abc:
+    print(letter)
+
+for i, letter in enumerate(abc):
+    print(i, letter)
+    
 ```
 ---
 ### Create an empty dictionary (2)
@@ -140,9 +158,11 @@ for colName in header:
 # dictionary comprehensions exist too!
 dataDict = {colName:[] for colName in header} 
 ```
+
+[More on list (and dict!) comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 ---
 ### Fill the dictionary (1)
-For each line in the *data* list
+For each line in the *data* list, we want to
 
 * split it
 * do something to empty cells
@@ -156,8 +176,8 @@ Do we need a function?
 ```{Python}
 def splitRow(row):
     row = row.strip("\r\n")
-    row = row.split('\t') # the second element of the list is a string
-    # missing data to None
+    row = row.split('\t') # now row is a list!
+    # missing data to None, string digits to floats
     for i in range(len(row)):
         elem = row[i]
         if elem == "":
@@ -166,3 +186,38 @@ def splitRow(row):
             row[i] = float(elem)
     return row
 ```
+
+---
+### Fill the dictionary (3)
+
+```{Python}
+for row in data:
+    row = splitRow(row)
+
+    # since rows and header have the same length...
+    for i in range(len(header)):
+        dataDict[header[i]].append(row[i]) # APPEND. List method
+        
+```
+
+* [append()](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists) is a list method that adds an element to the end of a list
+
+---
+### Loops
+```{Python}
+for idx in [0,7]:
+    print(idx)
+
+for idx in range(7):
+    print(idx)
+    
+abc = ["a", "b", "c"]
+for letter in abc:
+    print(letter)
+
+for i, letter in abc:
+    print(i, letter)
+    
+```
+
+### If - else
