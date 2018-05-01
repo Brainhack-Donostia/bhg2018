@@ -98,7 +98,7 @@ Dictionaries are collections of *key:value* pairs
 ```{Python}
 myDict = {"english":"en", "spanish:"sp", "french":"fr"}
 
-dataDict = {"name":[passenger1, passenger2,...],
+dataDict = {"name":["passenger1", "passenger2",...],
             "survived":[1,0,0,1,..], "age":[24,35,7,58,...]}
 ```
 
@@ -140,13 +140,13 @@ Now, how do we turn this into a dictionary?
 
 ---
 
-### Loops
+### For loops
 ```{Python}
-for i in [0,7]:
-    print(idx)
+for i in [0,1,2,3,4,5,6,7]:
+    print(i)
 
 for i in range(7):
-    print(idx)
+    print(i)
     
 abc = ["a", "b", "c"]
 for letter in abc:
@@ -178,7 +178,7 @@ dataDict = {colName:[] for colName in header}
 [More on list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 
 ---
-### Fill the dictionary (1)
+### Populate the dictionary (1)
 For each line in the *data* list, we want to
 
 1. split it on \t
@@ -187,7 +187,7 @@ For each line in the *data* list, we want to
 4. store each value in the appropriate dataDict key list.
 
 ---
-### Fill the dictionary (2)
+### Populate the dictionary (2)
 
 ```{Python}
 row = row.strip("\r\n")
@@ -224,7 +224,7 @@ x > 3
 
 ```
 ---
-### Fill the dictionary (3)
+### Populate the dictionary (3)
 Package the previous code into a function
 
 ```{Python}
@@ -248,7 +248,6 @@ def splitRow(row):
 for row in data:
     row = splitRow(row)
 
-    # since rows and header have the same length...
     for i in range(len(header)):
         dataDict[header[i]].append(row[i])
         
@@ -281,19 +280,11 @@ for cl in classes:
     passengersByClass[cl] = dataDict['Pclass'].count(cl)
 ```
 
-Now, percentages...
-
-```
-total = sum(passengerByClass.values())
-# why not use len()?
-
-for cl in passengersByClass.keys():
-    passengersByClass[cl] = passengersByClass[cl]/total
-
-
-```
-
 - Sets are **UNORDERED** collections of **unique** objects
+
+```
+mySet = {1,2,3}
+```
 
 - [count()](https://docs.python.org/2/tutorial/datastructures.html) is a list method that counts instances of an object inside a list.
 
@@ -340,9 +331,39 @@ def pctSurvival(category):
 ---
 ### String formatting
 
+```
+# The simplest exaple
+yourName = "Peter"
+"Hello, {}".format(yourName)
+
+# dont's worry about types!
+number = 3
+"{} times {} equals {}".format(number, number, number*number)
+```
+[More on string formatting](https://docs.python.org/2/library/string.html#format-string-syntax)
+
 ---
 ### Scope
-```
-Only functions version
-```
 
+- Global scope
+ - Global variables
+- Local scope
+
+[More about scope](https://www.saltycrane.com/blog/2008/01/python-variable-scope-notes/)
+
+---
+### Tuples
+
+Similar to lists, but IMMUTABLE
+
+```
+myTuple = (1,2,3)
+```
+[See here](https://docs.python.org/3.3/tutorial/datastructures.html#tuples-and-sequences)
+
+---
+
+```{Python}
+for attendee in room:
+    print("Thank you, {}!".format(attendee)
+```

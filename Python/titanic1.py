@@ -2,7 +2,6 @@
 # READING FILES
 # =============
 
-# read csv line by line
 FILE = "titanic.tsv"
 # import data as a list of strings,
 # one per row in the file
@@ -11,8 +10,10 @@ with open(FILE, 'r') as src:
     data = src.readlines() # read rest
 
 # see what imported data looks like
-print(header)
-print(data[5])
+header
+data[5]
+data[3:5]
+
 # data is an ORDERED list of rows
 
 
@@ -22,11 +23,8 @@ print(data[5])
 # Dictionary. Keys - Values
 # What could be one problem with this approach?
 
-# String methods
-# strip()  https://docs.python.org/2/library/string.html#string.strip
-# split()  https://docs.python.org/2/library/string.html#string.split
-
 header = header.strip().split("\t") # turn string into list of column names
+
 # create a dictionary with empty lists as values
 # dictionary comprehensions exist too!
 dataDict = {colName:[] for colName in header} 
@@ -43,72 +41,54 @@ def splitRow(row):
     row = row.strip("\r\n")
     row = row.split('\t') 
     # missing data to None, string digits to floats
-     for i in range(len(row)): # LISTS ARE MUTABLE. CAREFUL!!
-        if row[i] == "":
+    for i in range(len(row)): # LISTS ARE MUTABLE. CAREFUL!!
+        elem = row[i]
+        if elem == "":
             row[i] = None
-        elif row[i].isdigit(): # another string method!
+        elif elem.isdigit(): # another string method!
             row[i] = float(elem) # turn all numbers into floats
             # coercion from float to int is automatic; not so otherwise
-
     return row
 
 # now let's populate the dictionary
-# FOR LOOPS
-# IF - ELSE statements
 for row in data:
     row = splitRow(row)
-
-    # since rows and header have the same length...
+    
+    # since rows and header have the same length and positions are matched...    
     for i in range(len(header)):
-        dataDict[header[i]].append(row[i]) # APPEND. List method
+        dataDict[header[i]].append(row[i])  
 
 
-# How do access the data now?
-# we can access it by column name and by row number
+# ============================
+# ASK QUESTIONS ABOUT THE DATA
+# ============================
 
-# Percentage of adults and children who survived
-
-# Percentage of passengers in the boat
+# QUESTIONS USING ONE COLUMN
+# Number of passengers by class
 classes = list(set(dataDict['Pclass']))
-passengers = []
-for c in classes:
-    passengers.append(dataDict['Pclass'].count(c))
+passengersByClass = {int(cl):0 for cl in classes}
 
-total = float(sum(passengers))
+for cl in classes:
+    passengersByClass[cl] = dataDict['Pclass'].count(cl)
 
-#round
-for i, c in enumerate(classes):
-    print("Passengers in class {}: {}.\n\t {} % of total passengers").\
-    format(c, passengers[i], passengers[i]/total * 100)
+# Same as before, but now a function
+def totalByLevel(category):   
+    levels = set(dataDict[category])   
+    byCategory = {level:[] for level in levels}   
+    for level in levels:       
+        byCategory[level] = dataDict[category].count(level)    
+    return byCategory
 
-# Percentage of passengers that survived
-sum(dataDict["Survived"])/len(dataDict["Survived"])
+totalByLevel("Pclass")
+totalByLevel("Sex")
 
-# But what we really want to know is the  percentage of passengers
-# in each class that survived
-
-survivedSex = {"male":0, "female":0}
-survivedClass = {1:0, 2:0, 3:0}
-for i, p in enumerate(dataDict["Survived"]):
-    if p == 1:
-        survivedSex[dataDict["Sex"][i]] += 1
-        survivedClass[dataDict["Pclass"][i]] += 1
-
-# SCOPE (DATADICT)
-def totalByLevel(category):
-    levels = list(set(dataDict[category]))
-    totalDict = {level:[] for level in levels}
-    for level in levels:
-        totalDict[level] = dataDict[category].count(level)
-    return totalDict
-
+# QUESTIONS USING TWO COLUMNS
 def pctSurvival(category):
     # total number of passengers per group in that category
     total = totalByLevel(category)
     
-    # initialize counter in 0
-    levels = list(set(dataDict[category]))
-    survivors = {level:0 for level in levels}
+    levels = total.keys()
+    survivors = {level:0 for level in levels} # init counter
     
     for i, p in enumerate(dataDict["Survived"]):
         if p == 1:
@@ -117,12 +97,13 @@ def pctSurvival(category):
     print(category)
     print("==========")
     for level in levels:
-        print(level)
-        print("{}% survived".format(float(survivors[level]) / total[level] * 100))
+        print("-- " + str(level))
+        print("{}% survived".format((float(survivors[level]) / 
+        total[level] * 100)))
 
 
-
-
+pctSurvival("Pclass")
+pctSurvival("Sex")
 
 
    
