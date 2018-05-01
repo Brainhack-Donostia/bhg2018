@@ -38,7 +38,7 @@ tgt.close() # don"t forget this!
 ```
 
 ---
-### Let"s read our file!
+### Let's read our file!
 
 Check the **alternative and safer** syntax!
 
@@ -261,4 +261,10 @@ for row in data:
 
 ---
 
+### Questions about a column
+* What was the male to female ration?
+* How many passengers travelled in each class
 
+### Questions involving two columns
+* What percentage of women survived? And of men?
+* What percentage of passengers travelling on 3rd class survived? And in other classes?
