@@ -343,13 +343,72 @@ number = 3
 [More on string formatting](https://docs.python.org/2/library/string.html#format-string-syntax)
 
 ---
-### Scope
+### Scope and functions
+#### Global scope
 
-- Global scope
- - Global variables
-- Local scope
+```{Python}
+# we can ACCESS global variables from functions
+PI = 3.14
+
+def circumference(radius):
+    print(2*PI*radius)
+
+# we cannot CHANGE their value
+def circumference(radius):
+    PI = 3.1416
+    print(PI)
+    print(2*PI*radius)
+
+r = 5.1
+circumference(r)
+print(PI)
+print(PI * 2 * r)
+
+# unless we declare them as global
+def circumference(radius):
+    global PI
+    PI = 3.1416
+    print(PI)
+    print(2*PI*radius)
+
+r = 5.1
+circumference(r)
+print(PI)
+print(PI * 2 * r)
+
+```
+
+---
+### Scope and functions
+#### Local scope
+
+```{Python}
+# We cannot access variables declared inside functions (or loops)
+# outside of them
+
+def changeNum(num):
+    step1 = num + 5
+    step2 = step1 * 45
+    return step2
+
+changeNum(7)
+
+step2 # NameError!
+
+
+```
 
 [More about scope](https://www.saltycrane.com/blog/2008/01/python-variable-scope-notes/)
+
+---
+### Scope and functions
+
+It is general practice to:
+
+- Define global variables in CAPITAL LETTERS
+- Avoid the use of global variables
+
+See the file *better.py* to see a better way to do the same thing we just did today!
 
 ---
 ### Tuples
@@ -359,11 +418,12 @@ Similar to lists, but IMMUTABLE
 ```
 myTuple = (1,2,3)
 ```
-[See here](https://docs.python.org/3.3/tutorial/datastructures.html#tuples-and-sequences)
+[Learn more here](https://docs.python.org/3.3/tutorial/datastructures.html#tuples-and-sequences)
 
 ---
+### Thank you!
 
 ```{Python}
-for attendee in room:
-    print("Thank you, {}!".format(attendee)
+for brainHacker in room:
+    print("Thank you, {}!".format(brainHacker)
 ```
