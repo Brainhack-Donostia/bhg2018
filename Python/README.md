@@ -5,7 +5,7 @@
 ### Data
 We will be using the data foun in *titanic.tsv*.
 
-## Software
+### Software
 You will need to have [Python (2)](https://www.python.org/downloads/) installed in your computer if you want to follow the class interactively.
 
 We will work from bash, but you can use IDLE (it comes with you Python installation) to make things easier for you if you are a begginner.
