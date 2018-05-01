@@ -59,13 +59,13 @@ myList2 = [3,5,7,9,12,34,5]
 
 ```
 ---
-Lists:
+### Lists:
 
 *  are ORDERED
 
 ```{Python}
 myList[0] # access the first element
-myList2[1:4] # accesses [5,7,9]
+myList2[1:4] # access [5,7,9]
 ```
 *  are MUTABLE
 
@@ -95,13 +95,13 @@ myDict = {'english':'en', 'spanish:'sp', 'french':'fr'}
 ```
 
 ---
-Dictionaries:
+### Dictionaries:
 
 * are UNORDERED
 
 ```{Python}
 myDict[1]  # WRONG! 
-myDict['spanish'] # gives you 'sp'
+myDict['spanish'] # access 'sp'
 ```
 
 * are MUTABLE
@@ -115,4 +115,27 @@ myDict['spanish'] = 'es'
 ```{Python}
 myDict = {3:'three', 'ninety eight':98, 5.6:'five point six'}
 ```
- 
+---
+### Create an empty dictionary
+1. Let's get the column names from the string header
+ * [strip()](https://docs.python.org/2/library/string.html#string.strip)
+ * [split()](https://docs.python.org/2/library/string.html#string.split)
+
+```{Python}
+# turn string into list of column names
+header = header.strip().split("\t") 
+```
+
+### Create an empty dictionary
+2. Create the dictionary
+
+```
+# the classic way
+dataDict = {}
+for colName in header:
+    dataDict[colName] = []
+
+# the pythonic way
+# dictionary comprehensions exist too!
+dataDict = {colName:[] for colName in header} 
+```
