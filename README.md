@@ -13,7 +13,7 @@ Here, we are adding the download links for different materials you are going to 
 	* [ubuntu 16.04 (~8GB)](https://drive.google.com/drive/folders/1koBn7u_Tgdk7-pTMWvqKimKRd5ArdFPE?usp=sharing), with all Python libraries installed, this is perfect for the first day, and
 	* [ubuntu 16.04 (~10GB)](https://drive.google.com/open?id=1NVSNP--MPWLiJDeSatw7WPuVPtGUoBew), with all software except for MATLAB and FieldTrip.
 * Secondly, all the materials that you are going to need *for NIRS and MEG sessions* have been uploaded [here](https://drive.google.com/drive/folders/1rJE7pCIAXI_Zk0yXVERBA-Dai3_FGrQW).
-* Finally, all the materials that you are going to need for `python` and `git` sessions have been uploaded [here](python/) and [here](git-and-github/) respectively.
+* Finally, all the materials you are going to need for `python` and `git` sessions have been uploaded [here](python/) and [here](git-and-github/).
 
 ## Venue
 The event will take place at [Basque Center on Cognition Brain and Language (BCBL)](https://www.google.es/maps/place/BCBL+-+Basque+Center+on+Cognition,+Brain+and+Language/@43.294269,-1.9882887,17z/data=!3m1!4b1!4m5!3m4!1s0xd51afe05db924a1:0xaa992e65461e64d7!8m2!3d43.294269!4d-1.9861), Donostia-San Sebastian, Spain.
