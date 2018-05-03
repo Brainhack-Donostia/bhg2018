@@ -19,8 +19,8 @@ Here, we are adding the download links for different materials you are going to 
 * And those that you are going to need for `python` and `git` sessions are [here](python/) and [here](git-and-github/).
 
 ### Day 2
-* The *bash scripts*, and the *datasets* for *both* preprocessing and physiological denoising are now available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc).
-* The ipython notebook and the presentation that you are going to follow during physiological denoising session are now available [here](physiological-denoising/).
+* The *bash scripts*, and the *datasets* for *both* preprocessing and physiological denoising are available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc).
+* The *ipython notebook* and the *presentation* that you are going to follow during physiological denoising session are available [here](physiological-denoising/). 
 
 
 ## Venue
