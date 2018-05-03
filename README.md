@@ -21,6 +21,7 @@ Here, we are adding the download links for different materials you are going to 
 ### Day 2
 * The *bash scripts*, and the *datasets* for *both* preprocessing and physiological denoising are available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc).
 * The *ipython notebook* and the *presentation* that you are going to follow during physiological denoising session are available [here](physiological-denoising/). 
+* And finally, the *ipython notebooks* and the *datasets* you are going to use during MVPA tutorial are available [here](https://drive.google.com/open?id=12SH9N-FaNVmAQhW8hKDubWVInY8GpeFn).
 
 
 ## Venue
