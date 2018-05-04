@@ -23,6 +23,8 @@ Here, we are adding the download links for different materials you are going to 
 * The *ipython notebook* and the *presentation* that you are going to follow during physiological denoising session are available [here](physiological-denoising/). 
 * And finally, the *ipython notebooks* and the *datasets* you are going to use during MVPA tutorial are available [here](https://drive.google.com/open?id=12SH9N-FaNVmAQhW8hKDubWVInY8GpeFn).
 
+### Day 3
+* The *dataset* for DTI session are available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc).
 
 ## Venue
 The event will take place at [Basque Center on Cognition Brain and Language (BCBL)](https://www.google.es/maps/place/BCBL+-+Basque+Center+on+Cognition,+Brain+and+Language/@43.294269,-1.9882887,17z/data=!3m1!4b1!4m5!3m4!1s0xd51afe05db924a1:0xaa992e65461e64d7!8m2!3d43.294269!4d-1.9861), Donostia-San Sebastian, Spain.
