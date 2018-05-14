@@ -19,11 +19,11 @@ First and foremost, to avoid wasting our time in installation of software and de
 ### Day 2
 * The *datasets* for *both* preprocessing and physiological denoising are available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc),
 * the *bash scripts*, and the *presentation* that you are going to follow during preprocessing sessions are available [here](preprocessing/),
-* the *ipython notebooks* and the *presentation* that you are going to follow during physiological denoising sessions are available [here](physiological-denoising/), and 
-* finally, the *dataset* and the *PyMVPA tutorial* that you are going to follow during MVPA sessions are available [here](http://data.pymvpa.org/datasets/tutorial_data/tutorial_data-0.2.tar.gz) and [here](http://www.pymvpa.org/tutorial.html). 
+* the *ipython notebooks* and the *presentation* for physiological denoising sessions are available [here](physiological-denoising/), and 
+* finally, the *dataset* and the *PyMVPA tutorial* for MVPA sessions are available [here](http://data.pymvpa.org/datasets/tutorial_data/tutorial_data-0.2.tar.gz) and [here](http://www.pymvpa.org/tutorial.html). 
 
 ### Day 3
-* All the materials that you are going to need *NIRS sessions* have been uploaded [here](https://drive.google.com/drive/folders/1rJE7pCIAXI_Zk0yXVERBA-Dai3_FGrQW), and
+* All the materials that you are going to need for *NIRS sessions* have been uploaded [here](https://drive.google.com/drive/folders/1rJE7pCIAXI_Zk0yXVERBA-Dai3_FGrQW), and
 * the *dataset* for DTI sessions is available [here](https://drive.google.com/drive/folders/1du379mUZjVt1l5nePljCYSe7dCrS6LOc).
 
 ## Venue
